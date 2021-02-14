@@ -8,12 +8,16 @@ const entries = require('./routes/api/entries');
 const bodyparser = require('body-parser');
 const mongoose = require('mongoose');
 
-//authentication initialized
+//spotify authentication initialized
 app.use(cookieSession({
   name: 'spotify-auth-session',  
   keys: ['key1', 'key2']
 }))
+//Body parser configuration
+app.use(bodyparser.urlencoded({ extended: false }));
+app.use(bodyparser.json());
 
+//passport initializing
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -26,9 +30,7 @@ mongoose
   .then(() => console.log('MongoDb Connected'))
   .catch((err) => console.log(err));
 
-//Body parser configuration
-app.use(bodyparser.urlencoded({ extended: false }));
-app.use(bodyparser.json());
+
 
 
 //Landing route, checks if logged in
@@ -46,12 +48,15 @@ app.get('/logout', (req, res) => {
 app.get('/auth/error', (req, res) => res.send('Unknown Error'))
 
 //log in via spotify
-app.get('/auth/spotify',passport.authenticate('spotify', { scope: ['user-read-private', 'user-read-email'] }), (req, res) => {
+app.get('/auth/spotify',passport.authenticate('spotify', 
+  { scope: ['user-read-private', 'user-read-email', 'playlist-read-private', 'playlist-read-collaborative', 'playlist-modify-private', 'playlist-modify-public'] }), 
+  (req, res) => {
   // this function does not execute, is redirected to Spotify
 });
 
 app.get('/auth/spotify/callback',passport.authenticate('spotify', { failureRedirect: '/auth/error' }),
 function(req, res) {
+  console.log(req.user);
   res.redirect('/');
 });
 

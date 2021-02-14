@@ -21,6 +21,7 @@ passport.use(
   function(accessToken, refreshToken, profile, done) {
 
     User.findOrCreate({ spotifyId: profile.id,  }, function(err, user) {
+      console.log(user);
       return done(err, user);
     });
   }

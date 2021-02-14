@@ -14,8 +14,8 @@ const EntrySchema = new Schema({
     type: String,
     required: true
   },
-  mood: {
-    type: String
+  emotion: {
+    type: [String]
   },
   date: {
     type: Date,
