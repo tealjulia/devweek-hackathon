@@ -6,7 +6,7 @@ const findOrCreate = require('mongoose-findorcreate');
 
 
 const UserSchema = new Schema({
-  id: {
+  spotifyId: {
     type: String,
     required: true
   },
@@ -16,5 +16,6 @@ const UserSchema = new Schema({
     required: true
   }
 })
+
 UserSchema.plugin(findOrCreate);
 module.exports = User = mongoose.model('users', UserSchema);
