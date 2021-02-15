@@ -9,6 +9,7 @@ const pd = require('paralleldots');
 pd.apiKey = keys.parallelDotsKey;
 const axios = require('axios');
 const { emotion } = require('paralleldots');
+const jwt = require('jsonwebtoken');
 const _ = require('lodash');
 const spotifyWebApi = require('spotify-web-api-node');
 const spotifyApi = new spotifyWebApi({
@@ -18,6 +19,23 @@ const spotifyApi = new spotifyWebApi({
 })
 
 
+//check if logged in
+router.get('/current-session', (req, res) => {
+  jwt.verify(req.session.jwt, process.env.JWT_SECRET_KEY, (err, decodedToken) => {
+      if (err || !decodedToken) {
+          res.send(false);
+      } else {
+          res.send(decodedToken);
+      }
+  });
+})
+
+router.get('/logout', (req, res) => {
+  req.session = null;
+  res.redirect(
+      `/`
+  );
+});
 
 //@route   POST /api/entries
 //@desc    Add emotional analysis & Save
@@ -92,5 +110,8 @@ router.post('/:id/delete',
       })
       .catch(err => console.log(err))
   })
+
+
+
 
 module.exports = router;
