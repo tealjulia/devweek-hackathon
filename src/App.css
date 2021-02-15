@@ -1,0 +1,84 @@
+
+* {
+  text-decoration: none;
+  margin: 0;
+}
+
+.back {
+  color: rgb(47, 189, 255);
+  position: absolute;
+  top: 1;
+  left: 1;
+}
+
+.center {
+  text-align: center;
+}
+
+h1,
+#login {
+  color: #3EC1D3;
+}
+
+.AppBackground {
+  background: linear-gradient(60deg, rgba(0,0,0,1) 2%, rgba(38,19,96,1) 100%);  
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding: 10px;
+}
+
+#textInput {
+  min-width: 80%;
+  max-width: 80%;
+  line-height: 1rem;
+  padding: 10px;
+  margin: 30px;
+  border-radius: 15px;
+  max-height: 100px;
+  background: #0000;
+  border: solid white 2px;
+  color: antiquewhite;
+}
+
+.next {
+  height: 3rem;
+  width: 8rem;
+  border-radius: 50px;
+  background: #0000;
+  border: rgb(224, 147, 3) solid 2px;
+  color: antiquewhite;
+  margin: 10px;
+  cursor: pointer;
+}
+
+#icn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.SI-google {
+  padding: 1rem;
+  margin: 1rem 0px;
+  background: #0000;
+  border-radius: 50px;
+  border: solid 2px white;
+  width: 45%;
+  color: white;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.genre {
+  text-align: center;
+  line-height: 3rem;
+  cursor: pointer;
+}
