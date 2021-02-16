@@ -37,7 +37,7 @@ router.get('/callback', async (req, res) => {
   };
 
   req.session.jwt = jwt.sign(sessionJWTObject, keys.JWT_SECRET_KEY)
-  return res.redirect('http://localhost:3000/');
+  return res.redirect('http://localhost:3000/#/First');
 });
 
 router.get('/current-session', (req, res) => {

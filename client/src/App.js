@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Switch, Route, HashRouter } from 'react-router-dom';
 import First from './components/First';
 import Second from './components/Second';
@@ -7,12 +7,9 @@ import SignIn from './components/SignIn';
 import PlayMusic from './components/PlayMusic';
 import Results from './components/Results';
 import './App.css';
-import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import './App.css';
-import Home from "./components/Home";
-import Loading from "./components/Loading";
-import SpotifyRecommender from "./components/SpotifyRecommender";
+
 
 function App() {
   
@@ -39,22 +36,20 @@ function App() {
           <Switch>  
               <Route path='/' exact component={SignIn}/>
               <Route path='/SignIn' component={SignIn}/>
-        //route needed for backend... Note to self to Teal: reconcile this & login page, pass auth to ea child component as needed
-//               <Route path='/login' component={() => { 
-//                   window.location.href = 'http://localhost:8000/auth/login'; 
-//                   return null;
-//                   }}/>
-        //It might be helpful to give these functional names such as "JournalPage", etc. like the Results and PlayMusic are labeled!
+              {/* <Route path='/login' component={() => {  
+                   window.location.href = 'http://localhost:8000/auth/login'; 
+                   return null;
+                   }}/> */}
               <Route path='/First' component={First}/>
               <Route path='/Second' component={Second}/>
               <Route path='/Third' component={Third}/>
               <Route path='/Results' component={Results}/>
               <Route path='/PlayMusic' component={PlayMusic}/>
           </Switch>
-
         </HashRouter>
       );
   }
 }
 
 export default App;
+
