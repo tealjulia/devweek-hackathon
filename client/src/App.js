@@ -36,10 +36,10 @@ function App() {
           <Switch>  
               <Route path='/' exact component={SignIn}/>
               <Route path='/SignIn' component={SignIn}/>
-              {/* <Route path='/login' component={() => {  
+              <Route path='/login' component={() => {  
                    window.location.href = 'http://localhost:8000/auth/login'; 
                    return null;
-                   }}/> */}
+                   }}/>
               <Route path='/First' component={First}/>
               <Route path='/Second' component={Second}/>
               <Route path='/Third' component={Third}/>
