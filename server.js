@@ -12,7 +12,6 @@ const keys = require('./config/keys');
 const auth = require('./routes/api/auth');
 const helmet = require('helmet');
 const hpp = require('hpp');
-const csurf = require('csurf');
 
 const app = express();
 app.use(helmet());
@@ -25,7 +24,6 @@ app.use(
   })
 );
 
-app.use(csurf());
 
 //Body parser configuration
 app.use(bodyparser.urlencoded({ extended: false }));
@@ -45,40 +43,9 @@ mongoose
   .then(() => console.log('MongoDb Connected'))
   .catch((err) => console.log(err));
 
-
-
-
-// //Landing route, checks if logged in
-// app.get('/', isLoggedIn, (req,res)=>{
-//   res.send(req.headers);
-// })
-
-// //logout
-// app.get('/logout', (req, res) => {
-//   req.session = null;
-//   req.logout(); 
-//   res.redirect('/');
-// })
-
-// app.get('/auth/error', (req, res) => res.send('Unknown Error'))
-
-// //log in via spotify
-// app.get('/auth/spotify',passport.authenticate('spotify', 
-//   { scope: ['user-read-private', 'user-read-email', 'playlist-read-private', 'playlist-read-collaborative', 'playlist-modify-private', 'playlist-modify-public'] }), 
-//   (req, res) => {
-//   // this function does not execute, is redirected to Spotify
-// });
-
-// app.get('/auth/spotify/callback',passport.authenticate('spotify', { failureRedirect: '/auth/error' }),
-// function(req, res) {
-
-//   console.log(req.user);
-//   res.redirect('/');
-// });
-
-//entries routes
-app.use('/entries', entries);
-app.use('/auth', auth);
+//use routes
+app.use('/api/entries', entries);
+app.use('/api/auth', auth);
 app.listen(8000,()=>{
     console.log('Serve is up and running at the port 8000')
 })

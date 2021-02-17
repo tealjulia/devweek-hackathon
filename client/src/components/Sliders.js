@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { MusicContext } from '../context/Contexts';
 
-function Third() {
+
+function Sliders() {
+  const {state, dispatch} = useContext(MusicContext);
+
+
   return (
     <div className='AppBackground'>
 
@@ -18,7 +23,7 @@ function Third() {
   )
 }
 
-export default Third
+export default Sliders
 
 
 // singenuity contact max@singenuity.com

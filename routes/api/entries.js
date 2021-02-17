@@ -41,15 +41,17 @@ router.get('/logout', (req, res) => {
 //@desc    Add emotional analysis & Save
 //@access  Private
 router.post('/', (req, res) => {
-  const { errors, isValid } = validateEntryInput(req.body);
-
+  const entry = req.body.textBody;
+  const user = req.body.user;
+  const { errors, isValid } = validateEntryInput(req.body.textBody);
+  
     //check validation
     if (!isValid) {
       //if errors, send in json with 400 error
       return res.status(400).json(errors);
     }
     //perform emotional analysis
-    pd.emotion(req.body.text,"en")
+    pd.emotion(entry,"en")
       .then((response) => {
         response = JSON.parse(response);
         const emotions = response.emotion;
@@ -61,11 +63,13 @@ router.post('/', (req, res) => {
         let emotion = [firstEmotion, secondEmotion]
         //create entry & save
         const newEntry = new Entry({
-          user: req.user.spotifyId,
+          user: user,
           emotion: emotion,
-          text: req.body.text
+          text: entry
         });
-        newEntry.save().then((entry) => res.json(entry))
+        newEntry.save().then(
+          (entry) => res.send(entry)
+          )
       })
       .catch((error) => {
         console.log(error);
@@ -77,26 +81,35 @@ router.post('/', (req, res) => {
 //@route   GET  /api/entries/playlist
 //@desc    Generate Spotify playlist
 //@access  Private? Public?
-router.get('/playlist', (req, res) => {
-  const trackParams = req.query;
-  spotifyApi.setAccessToken(req.headers.authorization);
-  console.log('token = ' + spotifyApi.getAccessToken());
+// router.get('/playlist', (req, res) => {
+//   const trackParams = req.query;
+//   spotifyApi.setAccessToken(req.headers.authorization);
+//   console.log('token = ' + spotifyApi.getAccessToken());
 
-  spotifyApi.getRecommendations(req.query)
-.then(function(data) {
-  let recommendations = data.body;
-  console.log(recommendations);
-}, function(err) {
-  console.log("Something went wrong!", err);
-});
-
-
-  console.log(trackParams);
+//   spotifyApi.getRecommendations(req.query)
+// .then(function(data) {
+//   let recommendations = data.body;
+//   console.log(recommendations);
+// }, function(err) {
+//   console.log("Something went wrong!", err);
+// });
 
 
-}
+//   console.log(trackParams);
 
-)
+
+// }
+
+// )
+
+//@route   GET /api/entries/last
+//@route   get user's most recent entry
+//@access  Public
+router.get('/last', (req, res) => {
+  Entry.findOne({ user: req.body.user }, {}, { sort: { 'date': -1 } })
+    .then((entry) => res.json(entry))
+    .catch((err) => console.log(err));
+  })
 
 
 //@route   POST /api/entries/:id/delete
