@@ -1,19 +1,28 @@
 {
-  "name": "devweek-hackathon",
+  "name": "attune",
   "version": "1.0.0",
-  "description": "TypingDNA Project for DevWeek Hackathon",
+  "description": "A One-Line-a-Day Journal for Music Lovers",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
-  "author": "",
+  "author": "Teal Larson, Connor Wilson, Ana..., Nora...",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
     "body-parser": "^1.19.0",
+    "concurrently": "^5.3.0",
     "cookie-session": "^1.4.0",
+    "csurf": "^1.11.0",
     "express": "^4.17.1",
+    "helmet": "^4.4.1",
+    "hpp": "^0.2.3",
+    "http-proxy-middleware": "^1.0.6",
+    "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.20",
     "mongoose": "^5.11.16",
     "mongoose-findorcreate": "^3.0.0",
@@ -21,6 +30,7 @@
     "paralleldots": "^3.2.6",
     "passport": "^0.4.1",
     "passport-spotify": "^2.0.0",
+    "react-router-dom": "^5.2.0",
     "spotify-web-api-node": "^5.0.2",
     "validator": "^13.5.2"
   }
