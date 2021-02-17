@@ -39,8 +39,7 @@ router.get('/callback', async (req, res) => {
   };
 
   req.session.jwt = jwt.sign(sessionJWTObject, keys.JWT_SECRET_KEY)
-  return res.redirect('http://localhost:3000/#/Journal
-  ');
+  return res.redirect('http://localhost:3000/Journal');
 });
 
 router.get('/current-session', (req, res) => {
