@@ -92,7 +92,7 @@ export default function PlalistList() {
                <img src={track.cover} /> 
             </div>
             <div id='track-details'>
-               <span id="track-title">{track.title.length > 50 ? track.title.substr(0, 50)}</span><br />
+               <span id="track-title">{track.title.length > 50 ? track.title.substr(0, 50) : track.title}</span><br />
                <span id="track-artist">{track.artist.toString().substr(0, 45)}</span>
               </div>
          </div>
