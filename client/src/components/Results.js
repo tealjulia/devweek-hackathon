@@ -13,7 +13,7 @@ function Results() {
         <button className='next'> Fave playlist </button>
         <button className='next'> New entry </button>
         
-        <Link to='/Third'><button className='next'> Not how I'm feeling </button></Link>
+        <Link to='/Sliders'><button className='next'> Not how I'm feeling </button></Link>
 
       </div>
     </div>

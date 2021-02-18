@@ -1,12 +1,8 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { MusicContext } from '../context/Contexts';
 
 
 function Sliders() {
-  const {state, dispatch} = useContext(MusicContext);
-
-
   return (
     <div className='AppBackground'>
 
@@ -17,7 +13,7 @@ function Sliders() {
       <input type='range'></input>
       <input type='range'></input>
 
-      <Link to='/Second'><button type='submit' className='next'> Back </button></Link> 
+      <Link to='/GenrePicker'><button type='submit' className='next'> Back </button></Link> 
       <Link to='/Results'><button className='next'> Next </button></Link> 
     </div>
   )

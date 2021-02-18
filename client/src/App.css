@@ -98,3 +98,47 @@ ul {
   margin-left: auto;
   margin-right: auto;
 }
+
+#page-wrapper {
+  display: flex;
+  margin-top: 4em;
+  flex-direction: row no-wrap; 
+  justify-content: space-between;
+}
+
+.playlist-item {
+  display: inline-grid;
+  grid-template-columns: 25% 75%;
+  font-size: 1em;
+  border: red 2px solid;
+  justify-content: space around;
+  align-items: center;
+  width: 95%;
+  height: 6em;
+  padding: 5px;
+  overflow: truncate;
+}
+
+#track-cover{
+  grid-column: 1;
+}
+#track-details{
+  grid-column: 2;
+  text-align: center
+}
+
+#player-container {
+ margin-top: 20px;
+}
+
+#playlist-scroller-container {
+  flex-grow: 1
+}
+
+#player-container {
+  flex-grow: 3
+}
+
+#playlist-scroller-wrapper{
+  margin-right: -2em;
+}

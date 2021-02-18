@@ -21,7 +21,6 @@
     "express": "^4.17.1",
     "helmet": "^4.4.1",
     "hpp": "^0.2.3",
-    "http-proxy-middleware": "^1.0.6",
     "jsonwebtoken": "^8.5.1",
     "jwt-decode": "^3.1.2",
     "lodash": "^4.17.20",
@@ -31,7 +30,8 @@
     "paralleldots": "^3.2.6",
     "passport": "^0.4.1",
     "passport-spotify": "^2.0.0",
-    "react-router-dom": "^5.2.0",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
     "spotify-web-api-node": "^5.0.2",
     "validator": "^13.5.2"
   }

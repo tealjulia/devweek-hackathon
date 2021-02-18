@@ -2,13 +2,10 @@ import React, { useContext, useEffect, useState } from 'react'
 import Scrollbars from 'react-custom-scrollbars'
 import { Link } from 'react-router-dom'
 import axios from 'axios';
-import { MusicContext } from '../context/Contexts';
 
 const GenrePicker = () => {
-  // const [musicContext, setMusicContext] = useContext(MusicContext);
   const [selected, setSelected] = useState();
   const [myColor, setMyColor] = useState('red');
-  const {state, dispatch} = useContext(MusicContext);
 
   const [genres, setGenres] = useState([
     { genre: 'Country' },
@@ -57,18 +54,13 @@ const GenrePicker = () => {
          
    ))
 
-  //submit
-  const onSubmit = () => {
-    let tempMusicContext = MusicContext;
-    tempMusicContext.genres = selectedGenres;
-    dispatch({ type: 'UPDATE_MUSIC_OBJ', data: tempMusicContext})
-  }
+
 
     return (
         <div className='AppBackground'>
           
           <h1 className='center'> What genre of music do you like? </h1>
-          <form onSubmit={onSubmit} action='/Sliders'>
+          <form action='/Sliders'>
           <Scrollbars style={{ width: 300, height: 170, margin: 10 }}>
             <ul>
               {list}
