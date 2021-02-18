@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import React from 'react';
-import { Link } from 'react-router-dom';
 import Spotify_logo from '../images/Spotify_Logo.png';
 import Logo from '../images/logo.png';
 import axios from 'axios';
+import Icon from '../images/Exclude.png';
+import Arrow from '../images/arrow.png';
 
-
+function SignIn () {
   return (
     <div className='AppBackground'>
 
