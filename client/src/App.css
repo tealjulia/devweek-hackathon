@@ -3,6 +3,12 @@
   margin: 0;
 }
 
+a:visited {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: auto;
+}
+
 .back {
   color: rgb(47, 189, 255);
   position: absolute;
@@ -14,9 +20,14 @@
   text-align: center;
 }
 
-h1,
-#login {
-  color: #3EC1D3;
+h1 {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: 0.03em;
+  text-align: center;
 }
 
 .AppBackground {
@@ -26,36 +37,54 @@ h1,
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
   padding: 10px;
 }
 
-#textInput {
-  min-width: 80%;
-  max-width: 80%;
-  line-height: 1rem;
-  padding: 10px;
-  margin: 30px;
-  border-radius: 15px;
-  max-height: 100px;
-  background: #0000;
+form {
+  width: 100%;
+  display: block;
+}
+
+.journal-outer-container {
   border: solid white 2px;
-  color: antiquewhite;
+  display: flex;
+  justify-content: center;
+  width: 60%;
+  margin: auto;
+  min-height: 100px;
+  max-height: 200px;
+  padding: 7px;
+  border-radius: 20px;
+}
+
+#textInput {
+  /* line-height: 1rem; */
+  padding: 10px;
+  border-radius: 20px;
+  width: 100%;
+  border: solid white 2px;
 }
 
 .next {
   height: 3rem;
-  width: 8rem;
+  min-width: 200px;
+  max-width: 15%;
   border-radius: 50px;
   background: #0000;
-  border: rgb(224, 147, 3) solid 2px;
+  border: antiquewhite solid 2px;
   color: antiquewhite;
   margin: 10px;
   cursor: pointer;
+  transition: all .2s ease;
 }
 
-#icn {
+.next:hover {
+  background: whitesmoke;
+  color: black;
+}
+
+#personIcn {
   position: absolute;
   top: 1rem;
   right: 1rem;
@@ -141,4 +170,114 @@ ul {
 
 #playlist-scroller-wrapper{
   margin-right: -2em;
+
+  #spotify {
+  display: flex;
+  justify-content: center;
+  width: fill;
+  margin: auto;
+  height: auto;
+  background: #C2BFBD;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.spotify-outer-container {
+  border: solid 2px #1AB26B;
+  padding: 7px;
+  max-width: 50%;
+  border-radius: 20px;
+}
+
+.icon {
+  position: absolute;
+  top: 1.35rem;
+  left: 1rem;
+}
+
+.login-top {
+  position: absolute;
+  top: 2rem;
+  right: 8rem;
+}
+
+#personIcon {
+  position: absolute;
+  top: 1rem;
+  right: 3.3rem;
+  cursor: pointer;
+}
+
+#login {
+  display: inline-block;
+  margin: auto;
+}
+
+#arrow {
+  position: absolute;
+  top: 2.5rem;
+  right: 1.5rem;
+  cursor: pointer;
+}
+
+#current-mood {
+  font-weight: 200;
+  font-size: 5em;
+}
+
+#controls {
+  position: relative;
+}
+
+#play-btn,
+#back-btn,
+#next-btn,
+#favorite-btn {
+  display: inline;
+  margin: 15px;
+  background: #0000;
+}
+
+.time-controls {
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  height: 1rem;
+  border: solid white 1px;
+  border-radius: 10px;
+
+}
+
+#time-start {
+  position: absolute;
+  left: 25%;
+}
+
+#time-end {
+  position: absolute;
+  right: 25%;
+}
+
+#time {
+
+}
+
+#favorite-btn {
+  position: absolute;
+  right: -45%;
+  top: 0;
+}
+
+#back-btn {
+  height: 2rem;
+}
+
+input[type=range] {
+  margin: 10px;
+}
+
+@media (min-width: 768px) {
+  .journal-outer-container {
+    width: 30%;
+  }
 }

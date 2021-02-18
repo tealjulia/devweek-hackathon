@@ -5,10 +5,6 @@ const jwt = require('jsonwebtoken');
 const router = express.Router();
 const keys = require('../../config/keys');
 
-
-
-
-
 // router.get('/login', (req, res) => {
 //     res.redirect(`https://accounts.spotify.com/authorize?${querystring.stringify({
 //         response_type: 'code',
@@ -18,6 +14,7 @@ const keys = require('../../config/keys');
 //         show_dialog: true
 //     })}`)
 // });
+
 
 router.get('/callback', async (req, res) => {
   const {code} = req.query;
