@@ -32,31 +32,8 @@ class Journal extends Component {
     }
     
 
-  // const [textBody, setTextBody] = useState();
-  // const [emotions, setEmotions] = useState(null);
-
   
   const onSubmit = () => {
-  //   e.preventDefault();
-    
-  //   const newState = {
-  //     // user: user.user,
-  //     // textBody: textBody
-  //   }
-
-  //   console.log('user is ' + newState.user);
-  //   //submit entry to database
-  //   axios
-  //     .post('/api/entries/', newState)
-  //   //set emotion state
-  //     .then((res) => {
-  //       // setEmotions(res.data.emotions);
-  //     })
-  //   //redirect to next page
-  //   .then(() => {
-  //     window.location.href='/GenrePicker';
-  //   })
-  //   .catch((err) => console.log(err))
   console.log('onSubmit')
   }
   
@@ -88,9 +65,7 @@ class Journal extends Component {
         <textarea type='text' 
           id='textInput' 
           placeholder='Type something here...' 
-          name="textBody"
-          onChange={e => setTextBody(e.target.value)}
-          value={textBody}>
+          name="textBody">
         </textarea>
        
       </div> 

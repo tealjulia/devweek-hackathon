@@ -151,6 +151,7 @@ ul {
 #track-cover{
   grid-column: 1;
 }
+
 #track-details{
   grid-column: 2;
   text-align: center
@@ -170,6 +171,7 @@ ul {
 
 #playlist-scroller-wrapper{
   margin-right: -2em;
+}
 
   #spotify {
   display: flex;

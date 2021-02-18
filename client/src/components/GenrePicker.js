@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from 'react'
 import Scrollbars from 'react-custom-scrollbars'
 import { Link } from 'react-router-dom'
 import axios from 'axios';
+import Icon from '../images/Exclude.png';
+import Arrow from '../images/arrow.png';
 
 
 const GenrePicker = () => {
@@ -81,7 +83,7 @@ const [myColor, setMyColor] = useState('#6e6e6e48');
           <br></br>
           <br></br>
 
-          <form onSubmit={onSubmit} action='/Sliders' className='center '>
+          <form action='/Sliders' className='center '>
           <Scrollbars style={{ width: 300, height: 170, margin: 'auto' }}>
             <ul style={{padding: 0}} className='track-horizontal'>
               {list}
