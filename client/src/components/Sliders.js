@@ -1,14 +1,10 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { MusicContext } from '../context/Contexts';
 import Icon from '../images/Exclude.png';
 import Arrow from '../images/arrow.png'
 
 
 function Sliders() {
-  const {state, dispatch} = useContext(MusicContext);
-
-
   return (
     <div className='AppBackground'>
       <img src={Icon} className='icon' />
@@ -37,6 +33,7 @@ function Sliders() {
       <br></br>
       <br></br>
 
+      <Link to='/GenrePicker'><button type='submit' className='next'> Back </button></Link> 
       <Link to='/Results'><button className='next'> Next </button></Link> 
     </div>
   )

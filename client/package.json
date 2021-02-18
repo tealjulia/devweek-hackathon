@@ -1,5 +1,5 @@
 {
-  "name": "attuen",
+  "name": "attune",
   "version": "0.1.0",
   "description": "A Line-a-Day Journal for Music Lovers",
   "private": true,
@@ -9,9 +9,11 @@
     "@testing-library/user-event": "^12.7.1",
     "axios": "^0.21.1",
     "express": "^4.17.1",
+    "jwt-decode": "^3.1.2",
     "react": "^17.0.1",
     "react-custom-scrollbars": "^4.2.1",
     "react-dom": "^17.0.1",
+    "react-redux": "^7.2.2",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.2",
