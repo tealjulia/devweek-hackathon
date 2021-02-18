@@ -12,8 +12,8 @@ function Results() {
   return (
     
     <div className='AppBackground'>
-      <img src={Icon} className='icon' />
 
+      <img src={Icon} className='icon' />
       <div className='login-top'>
         <a href="/api/auth/login">
           <p id='login' className='center'> Login </p> 

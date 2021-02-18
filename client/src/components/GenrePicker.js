@@ -2,16 +2,12 @@ import React, { useContext, useEffect, useState } from 'react'
 import Scrollbars from 'react-custom-scrollbars'
 import { Link } from 'react-router-dom'
 import axios from 'axios';
-import { MusicContext } from '../context/Contexts';
-import Icon from '../images/Exclude.png';
-import Arrow from '../images/arrow.png';
 
 
 const GenrePicker = () => {
-  // const [musicContext, setMusicContext] = useContext(MusicContext);
-  const [selected, setSelected] = useState();
-  const [myColor, setMyColor] = useState('#6e6e6e48');
-  const {state, dispatch} = useContext(MusicContext);
+const [selected, setSelected] = useState();
+const [myColor, setMyColor] = useState('#6e6e6e48');
+
 
   const [genres, setGenres] = useState([
     { genre: 'Country' },
@@ -60,12 +56,7 @@ const GenrePicker = () => {
          
    ))
 
-  //submit
-  const onSubmit = () => {
-    let tempMusicContext = MusicContext;
-    tempMusicContext.genres = selectedGenres;
-    dispatch({ type: 'UPDATE_MUSIC_OBJ', data: tempMusicContext})
-  }
+
 
     return (
         <div className='AppBackground'>
@@ -86,6 +77,7 @@ const GenrePicker = () => {
         <img src={Arrow} id='arrow' />
           
           <h1 className='center'> What genre of music do you like? </h1>
+
           <br></br>
           <br></br>
 
