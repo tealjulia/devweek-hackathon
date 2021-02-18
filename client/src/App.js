@@ -20,7 +20,7 @@ class App extends Component{
         <div className='AppBackground app-container'>
         <Header />
           <BrowserRouter>    
-              <div>
+
                 <Switch>
                   <Route path='/' exact component={SignIn}/>
                   <Route path='/SignIn' component={SignIn}/>    
@@ -29,10 +29,9 @@ class App extends Component{
                     <Route path='/Sliders' component={Sliders} />
                     <Route path='/Results' component={Results}/>
                   </Switch>
-              </div>
             </BrowserRouter>
           </div>
-          </div>
+    </div>
 
             )
         }         
