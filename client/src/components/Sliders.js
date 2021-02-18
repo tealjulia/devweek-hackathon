@@ -27,9 +27,14 @@ function Sliders() {
       <br></br>
       <br></br>
 
-      <input type='range' min='0.0' max='1.0'></input>
-      <input type='range' min='0.0' max='1.0'></input>
-      <input type='range' min='0.0' max='1.0'></input>
+      <label for='tempo'> Tempo </label>
+      <input type='range' min='0.0' max='1.0' id='tempo'></input>
+
+      <label for='valence'> Valence </label>
+      <input type='range' min='0.0' max='1.0' id='valence'></input>
+
+      <label for='energy'> Energy </label>
+      <input type='range' min='0.0' max='1.0' id='energy'></input>
       <br></br>
       <br></br>
 
