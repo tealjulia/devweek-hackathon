@@ -12,7 +12,9 @@ router.get('/login', (req, res) => {
         redirect_uri: keys.SPOTIFY_REDIRECT_URI,
         scope: 'playlist-modify-public playlist-modify-private user-read-email user-read-private',
         show_dialog: true
-    })}`);
+    })}`)
+
+    Promise.resolve('').then(result => sendResponse(result));
 });
 
 router.get('/callback', async (req, res) => {
