@@ -1,67 +1,98 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import Icon from '../images/Exclude.png';
-import Arrow from '../images/arrow.png';
-import Play from '../images/Play.png';
-import Back from '../images/back.png';
-import Next from '../images/next.png';
-import Favorite from '../images/heart.png';
+import Playlist from './Playlist';
+import Player from './Player';
 
-function Results() {
-  const playing = []
+export default function Results() {
+
+  const playlistData = [
+    {
+      title: 'Changing - Majestic Remix',
+      artist: [ 'Sigma', 'Paloma Faith', 'Majestic' ],
+      cover: 'https://i.scdn.co/image/ab67616d00004851193afbc617854df8da0e5124'
+    },
+    {
+      title: 'Shine',
+      artist: [ 'Years & Years' ],
+      cover: 'https://i.scdn.co/image/ab67616d00004851b84e077bb3f2e36adbdeb6d4'
+    },
+    {
+      title: 'Whiskey Lullaby (feat. Alison Krauss)',
+      artist: [ 'Brad Paisley', 'Alison Krauss' ],
+      cover: 'https://i.scdn.co/image/ab67616d000048517302ccf08d789304c55ee73e'
+    },
+    {
+      title: "It's Ok If You Forget Me",
+      artist: [ 'Astrid S' ],
+      cover: 'https://i.scdn.co/image/ab67616d000048516d7ef0f772d6506524ade7fd'
+    },
+    {
+      title: 'Sax',
+      artist: [ 'Fleur East' ],
+      cover: 'https://i.scdn.co/image/ab67616d0000485140ab5a3c8e7e7c8f12cca2bb'
+    },
+    {
+      title: 'Parachute',
+      artist: [ 'Chris Stapleton' ],
+      cover: 'https://i.scdn.co/image/ab67616d00004851540fc1d083eac5bcff8dad21'
+    },
+    {
+      title: 'Happiness',
+      artist: [ 'Sam Sparro' ],
+      cover: 'https://i.scdn.co/image/ab67616d00004851240f2991f6b521b94aad9fb4'
+    },
+    {
+      title: 'Who I Am',
+      artist: [ 'Jessica Andrews' ],
+      cover: 'https://i.scdn.co/image/ab67616d00004851f8a703cc1a793ae7e77b5e85'
+    },
+    {
+      title: 'Baby This and Baby That',
+      artist: [ 'Jon Wolfe' ],
+      cover: 'https://i.scdn.co/image/ab67616d00004851b0e1bcff7d67c36d0b893edb'
+    },
+    {
+      title: 'Erupting Light',
+      artist: [ 'Hildur Guðnadóttir', 'Jóhann Jóhannsson' ],
+      cover: 'https://i.scdn.co/image/ab67616d0000485141c99cac5cae2fab2e567f4c'
+    },
+    {
+      title: 'Stay High - Habits Remix',
+      artist: [ 'Tove Lo', 'Hippie Sabotage' ],
+      cover: 'https://i.scdn.co/image/ab67616d0000485170cd79659edf4d5fec0840b8'
+    },
+    {
+      title: 'Do I Make You Wanna',
+      artist: [ 'Billy Currington' ],
+      cover: 'https://i.scdn.co/image/ab67616d00004851ebae92a723fd5b67c21eb15a'
+    },
+    {
+      title: 'Concerto for Orchestra, BB 123: I. Introduzione: Andante non troppo - Allegro vivace',
+      artist: [ 'Béla Bartók', 'Baltimore Symphony Orchestra', 'Marin Alsop' ],
+      cover: 'https://i.scdn.co/image/ab67616d0000485197766a30a45c565f8efa8e78'
+    },
+    {
+      title: 'Bang Bang Bang',
+      artist: [ 'Mark Ronson', 'The Business Intl' ],
+      cover: 'https://i.scdn.co/image/ab67616d000048514e1ce5c19325a80d8300cb64'
+    },
+    {
+      title: 'Shoot Out the Lights',
+      artist: [ 'Jessie James Decker' ],
+      cover: 'https://i.scdn.co/image/ab67616d000048513366ba742ca0d856a5b596a7'
+    }
+  ]
+
+
+
+
   return (
-    
-    <div className='AppBackground'>
-
-      <img src={Icon} className='icon' />
-      <div className='login-top'>
-        <a href="/api/auth/login">
-          <p id='login' className='center'> Login </p> 
-        </a>  
+    <div id="results-container">
+      <div id='player-container'>
+        <Player nowPlaying={playlistData[0]}/>
       </div>
-      <div id='personIcon' className='center'>
-        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-            width="60" height="60"
-            viewBox="0 0 152 172">
-          <g fill="none" fillRule="nonzero" stroke="none" strokeWidth="1" strokeLinecap="butt" strokeLinejoin="miter" strokeMiterlimit="10" strokeDasharray="" strokeDashoffset="0" fontFamily="none" fontWeight="none" fontSize="none" textAnchor="none"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#3EC1D3"><path d="M80.625,10.75c-38.50683,0 -69.875,31.36817 -69.875,69.875c0,38.50683 31.36817,69.875 69.875,69.875c38.50683,0 69.875,-31.36817 69.875,-69.875c0,-38.50683 -31.36817,-69.875 -69.875,-69.875zM80.625,21.5c32.71192,0 59.125,26.41308 59.125,59.125c0,14.40332 -5.12304,27.54688 -13.60547,37.79297c-4.61914,-13.10156 -14.61328,-23.6416 -27.37891,-28.84864c5.33301,-4.91308 8.73438,-11.92578 8.73438,-19.69433c0,-14.78125 -12.09375,-26.875 -26.875,-26.875c-14.78125,0 -26.875,12.09375 -26.875,26.875c0,7.76855 3.40136,14.78125 8.73438,19.69433c-12.76562,5.20703 -22.71777,15.74707 -27.33692,28.84864c-8.52441,-10.24609 -13.64746,-23.38965 -13.64746,-37.79297c0,-32.71192 26.41308,-59.125 59.125,-59.125zM80.625,53.75c8.98633,0 16.125,7.13868 16.125,16.125c0,8.98633 -7.13867,16.125 -16.125,16.125c-8.98632,0 -16.125,-7.13867 -16.125,-16.125c0,-8.98632 7.13868,-16.125 16.125,-16.125zM80.625,96.75c18.2666,0 33.25781,12.97558 36.74317,30.19239c-10.12011,8.02051 -22.84375,12.80761 -36.74317,12.80761c-13.89942,0 -26.62304,-4.7871 -36.70117,-12.80761c3.44335,-17.2168 18.43456,-30.19239 36.70117,-30.19239z"></path></g></g></svg>
+      <div id='playlist-container'>
+        <Playlist playlistData={playlistData}/>
       </div>
-      
-      <img src={Arrow} id='arrow' />
-      
-      <p> Today you're feeling </p>
-        <br></br>
-        <br></br>
-        
-      <h1 id='current-mood'> *mood* </h1>
-        <br></br>
-        <br></br>
-        <br></br>
-      <p> Here's a playlist attuned to your mood </p>
-     
-     <div id='player' className='center'>
-       <img src={playing} />
-       <h3> placeholder </h3>
-       <p> placeholder </p>
-     </div>
-
-    <br></br>
-    <br></br>
-
-     <div className='center' id='controls'>
-      <img src={Back} id='back-btn'/>     
-      <img src={Play} id='play-btn'/>
-      <img src={Next} id='next-btn'/>
-      <img src={Favorite} id='favorite-btn'/>
-     </div>
-
-    <div class='time-controls'>
-      <span id='time-start'> 00:00 </span>
-      <span class='time'></span>
-      <span id='time-end'> 00:00 </span>
-    </div>
-
     </div>
   )
 }
-
-export default Results

@@ -8,7 +8,7 @@ import Arrow from '../images/arrow.png';
 
 function SignIn () {
   return (
-    <div className='AppBackground'>
+    <div className="component-container">
 
       <div>
         <img src={Logo}/>
