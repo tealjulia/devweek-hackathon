@@ -1,6 +1,7 @@
 import React from 'react';
 import Playlist from './Playlist';
 import Player from './Player';
+import { Link } from 'react-router-dom';
 
 export default function Results() {
 
@@ -89,10 +90,13 @@ export default function Results() {
     <div id="results-container">
       <div id='player-container'>
         <Player nowPlaying={playlistData[0]}/>
+        <Link to='/Journal'><button type='submit' className='next'> Back to Journal </button></Link> 
       </div>
       <div id='playlist-container'>
         <Playlist playlistData={playlistData}/>
       </div>
+
+
     </div>
   )
 }

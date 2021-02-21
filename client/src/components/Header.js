@@ -11,7 +11,7 @@ export default function Header() {
           <p id='login' className='center'> Login </p> 
         </a>  
       </div>
-      <div id='personIcon' className='center'>
+        <div id='personIcon' className='center'>
         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
             width="60" height="60"
             viewBox="0 0 152 172">

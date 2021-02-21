@@ -28,11 +28,11 @@ function SignIn () {
       <input type='password' placeholder='Password' className='SI-google'></input> */}
 
       <div className='spotify-outer-container'>
-        {/* <Link to='/Journal'> */}
+        <Link to='/Journal'>
           <a type='submit'>
             <img src={Spotify_logo} className='center ' id='spotify'/>
           </a>
-        {/* </Link> */}
+        </Link>
       </div> 
     </div>
   )
