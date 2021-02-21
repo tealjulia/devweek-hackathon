@@ -47,7 +47,7 @@ mongoose
 app.use('/api/entries', entries);
 app.use('/api/auth', auth);
 app.listen(8000,()=>{
-    console.log('Serve is up and running at the port 8000')
+    console.log('Server is up and running at the port 8000')
 })
 
 module.exports = app;
