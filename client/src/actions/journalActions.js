@@ -35,11 +35,15 @@ export const addEntry = (entryData) => {
 //get entry by id
 
 //get entries
-
+export const getUserEntries = () => (dispatch) => {
+  dispatch(setEntryLoading());
+  axios
+    .get('/api/entries/all')
+}
 //delete entry by id
 
 // Set loading state
-export const setPostLoading = () => {
+export const setEntryLoading = () => {
   return {
     type: POST_LOADING,
   };

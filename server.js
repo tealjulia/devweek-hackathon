@@ -1,6 +1,5 @@
 const express = require('express');
 const passport = require('passport');
-require('./config/passport')
 const session = require('cookie-session');
 const isLoggedIn = require('./middleware/auth');
 const entries = require('./routes/api/entries');

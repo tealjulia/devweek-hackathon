@@ -23,8 +23,8 @@ function Sliders() {
       <br></br>
       <br></br>
 
-      <Link to='/GenrePicker'><button type='submit' className='next'> Back </button></Link> 
-      <Link to='/Results'><button className='next'> Next </button></Link> 
+      <Link to='/genre-picker'><button type='submit' className='next'> Back </button></Link> 
+      <Link to='/results'><button className='next'> Next </button></Link> 
     </div>
   )
 }

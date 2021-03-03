@@ -103,14 +103,36 @@ router.post('/', (req, res) => {
 // )
 
 //@route   GET /api/entries/last
-//@route   get user's most recent entry
-//@access  Public
-router.get('/last', (req, res) => {
-  Entry.findOne({ user: req.body.user }, {}, { sort: { 'date': -1 } })
+//@desc   get user's most recent entry
+//@access  Private
+router.get('/last', 
+  (req, res) => {
+  Entry.findOne({ user: req.user.id }, {}, { sort: { 'date': -1 } })
     .then((entry) => res.json(entry))
     .catch((err) => console.log(err));
   })
 
+//@route  GET /api/entries/all
+//@desc   Get all user's previous entries
+//@access   Private
+router.get('/all', 
+  (req, res) => {
+  Entry.find({ user: req.user.id }, {}, { sort: { 'date': -1 } })
+    .then((entry) => res.json(entry))
+    .catch((err) => console.log(err));
+  })
+
+//@route  GET /api/entry/:id
+//@desc   Get entry by id
+//@access Private
+router.get("/:id", (req, res) => {
+
+  Post.findById(req.params.id)
+    .then((post) => res.json(post))
+    .catch((err) =>
+      res.status(404).json({ nopostfound: "No post found with that ID" })
+    );
+});
 
 //@route   POST /api/entries/:id/delete
 //@desc    delete entry

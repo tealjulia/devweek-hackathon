@@ -9,4 +9,5 @@ export const GET_ERRORS = 'GET_ERRORS';
 export const UPDATE_GENRES = 'UPDATE_GENRES';
 export const UPDATE_PREFERENCES = 'UPDATE_PREFERENCES';
 export const SET_MOOD = 'SET_MOOD';
-export const UPDATE_MOOD = 'UPDATE_MOOD'
+export const UPDATE_MOOD = 'UPDATE_MOOD';
+export const MUSIC_LOADING = 'MUSIC_LOADING';

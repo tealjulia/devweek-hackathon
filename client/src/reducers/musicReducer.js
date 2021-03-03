@@ -1,7 +1,8 @@
 import {
   UPDATE_GENRES,
   UPDATE_PREFERENCES,
-  UPDATE_MOOD
+  UPDATE_MOOD,
+  MUSIC_LOADING
 } from '../actions/types'
 
 const initialState = {

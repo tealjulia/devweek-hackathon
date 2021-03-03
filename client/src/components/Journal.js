@@ -5,10 +5,24 @@ import Icon from '../images/Exclude.png';
 import Arrow from '../images/arrow.png';
 
 class Journal extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      textBody: '',
+      errors: {},
+      user: ''
+    };
+  }
+
   ComponentDidMount = () => {
     
   }
 
+  componentWillReceiveProps(newProps) {
+    if (newProps.errors) {
+      this.setState({ errors: newProps.errors });
+    }
+  }
   
   render () {
     console.log(window.location.hash);
@@ -40,7 +54,7 @@ class Journal extends Component {
        
       </div> 
       <br></br> 
-        <Link to='/GenrePicker'><button type='submit' className='next'> Next </button></Link>
+        <Link to='/genre-picker'><button type='submit' className='next'> Next </button></Link>
       </form>
 
     </div>

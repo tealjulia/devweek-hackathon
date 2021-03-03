@@ -78,9 +78,9 @@ const [myColor, setMyColor] = useState('#6e6e6e48');
           <br></br>
           <br></br>
           
-          <Link to='/Journal'><button type='submit' className='next'> Back </button></Link> 
-          <Link to='/Sliders'><button type='submit' className='next'> next </button></Link>
-          <Link to='/Journal'><button className='next'> Something else... </button></Link>
+          <Link to='/journal'><button type='submit' className='next'> Back </button></Link> 
+          <Link to='/sliders'><button type='submit' className='next'> next </button></Link>
+          <Link to='/journal'><button className='next'> Something else... </button></Link>
           </form>
         </div>
         

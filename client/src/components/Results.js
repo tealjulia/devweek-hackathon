@@ -90,7 +90,7 @@ export default function Results() {
     <div id="results-container">
       <div id='player-container'>
         <Player nowPlaying={playlistData[0]}/>
-        <Link to='/Journal'><button type='submit' className='next'> Back to Journal </button></Link> 
+        <Link to='/journal'><button type='submit' className='next'> Back to Journal </button></Link> 
       </div>
       <div id='playlist-container'>
         <Playlist playlistData={playlistData}/>

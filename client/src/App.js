@@ -1,5 +1,10 @@
 import React, { Component} from 'react';
 import { Switch, Route, BrowserRouter, Link } from 'react-router-dom';
+import { Provider } from 'react-redux'; 
+import jwt_decode from 'jwt-decode';
+import setAuthToken from './utils/setAuthToken';
+import { logoutUser } from './actions/authActions';
+import { SET_USER } from './actions/types';
 import Journal from './components/Journal';
 import GenrePicker from './components/GenrePicker';
 import Sliders from './components/Sliders';
@@ -9,8 +14,14 @@ import Header from './components/Header';
 import Callback from './components/Callback'
 import PlaylistList from './components/Playlist';
 import './App.css';
+import axios from 'axios';
+import store from './store';
 
 
+
+// if (localStorage.auth_token) {
+//   setAuthToken(localStorage.getItem('auth_token'))
+// }
 
 class App extends Component{
 
@@ -28,23 +39,24 @@ class App extends Component{
     const spotifyLoginURI = `https://accounts.spotify.com/authorize?client_id=${spotify.client_id}&response_type=${spotify.response_type}&redirect_uri=${spotify.redirect_uri}&state=${spotify.state}&scope=${spotify.scope}&show_dialog=${spotify.show_dialog}`
 
     return (
+      <Provider store = {store}>
       <div>
         <div className='AppBackground app-container'>
         <Header spotifyLoginURI={spotifyLoginURI}/>
           <BrowserRouter>    
                 <Switch>
                   <Route path='/' exact render={() => <SignIn spotifyLoginURI={spotifyLoginURI}/>} />
-                  <Route path='/SignIn' render={() => <SignIn spotifyLoginURI={spotifyLoginURI}/>} />    
-                    <Route path='/Callback/' component={Callback} />
-                    <Route path='/Journal' component={Journal}/>
-                    <Route path='/GenrePicker' component={GenrePicker} />
-                    <Route path='/Sliders' component={Sliders} />
-                    <Route path='/Results' component={Results}/>
+                  <Route path='/sign-n' render={() => <SignIn spotifyLoginURI={spotifyLoginURI}/>} />    
+                    <Route path='/callback/' component={Callback} />
+                    <Route path='/journal' component={Journal}/>
+                    <Route path='/genre-picker' component={GenrePicker} />
+                    <Route path='/sliders' component={Sliders} />
+                    <Route path='/results' component={Results}/>
                   </Switch>
             </BrowserRouter>
           </div>
-    </div>
-
+        </div>
+      </Provider>
             )
         }         
           
